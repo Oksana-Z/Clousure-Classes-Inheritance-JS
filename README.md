@@ -1,1 +1,4 @@
-# Clousure-Classes-Inheritance-JS
+# Clousure, Classes, Inheritance (Game)
+JS
+# Author 
+Oksana Zahakailo
