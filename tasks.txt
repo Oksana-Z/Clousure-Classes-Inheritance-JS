@@ -1,0 +1,87 @@
+Clousures
+
+Write a function that counts how many times it was invoked, e.g.:
+countInvokations() // 1
+countInvokations() // 2
+countInvokations() // 3
+Please use the power of closures for this task and do not use global variables
+
+
+
+Classes 
+
+1. Create UserList class
+UserList constructor should accept array of user objects (users)
+UserList instance should hold users objects as private field
+
+Example user:
+{
+  “id”: “1485249082126”,
+  “firstName”: “Jon”,
+  “lastName”: “Snow”,
+  “age”: 30
+}
+
+
+2. Create public functions
+-function `showNames`, should log into the console names of stored users
+-function `showById`, should log into console user object (or representative string) that is matched by id, in case we unable to find user it should log “Unable to find user with id: __”
+-function `add`, if should generate id for new user(field firstName is required) and log into console (“Hi everyone, i am ___”)
+-function `removeById`, should find user by id and remove it from list
+in we unable to find user it should log “Unable to find user with id: __”
+after user was removed, it should log “bye bye __”
+-function `logUsersCould`, that will show total user count
+
+3. Bonus
+all functions should support function chaining
+
+example:
+
+	userList.showAll().showById(15).deleteById(22)
+
+
+Inheritance
+
+1. Write two classes Champion and Monster. Both classes have “name”, “attack” and “hitpoints” attributes which they accept on instantiation as a config object. 
+Both classes should have at least following methods:
+getHitpoints - returns current hitpoints.
+setHitpoints - sets current hitpoints.
+getTotalHitpoints - returns total hitpoints.
+setTotalHitpoints - sets total possible hitpoints.
+getAttack - returns amount of possible damage.
+setAttack - sets amount of possible damage.
+fight - accepts either other champion or monster and reduces its hitpoints by amount of “attack”. Make sure the target is appropriate.
+isAlive - returns boolean to indicate that person “hitpoints” are more than 0.
+
+Champion class should have at least following methods:
+rest - which restores 5 “hitpoints”
+defence - will totally block next incoming damage
+	Monster class should have at least following methods:
+enrage - next two attacks deal double damage
+
+
+Champion trains in fight and gets +1 to “attack” for killing monsters and other champions.
+Monsters, on the other hand, feasts on dead bodies and restores 25% of their opponents maximum “hitpoints” and also add 10% of their opponents maximum “hitpoints”  to their own maximum “hitpoints”, floored to whole integers.
+
+Invocation example:
+var heracles = new Champion({name: ‘Heracles’, attack: 10, hitpoints: 50});
+var boar = new Monster({name: ‘Erymanthian Boar’, attack: 5, hitpoints: 100});
+
+heracles.fight(boar);
+boar.getHitpoints(); // -> 90
+boar.enrage();
+heracles.fight(boar);
+boar.getHitpoints(); // -> 80
+boar.fight(heracles);
+heracles.getHitpoints(); // -> 40
+…
+heracles.fight(boar);
+boar.isAlive(); // -> false
+heracles.getAttack(); // -> 11
+heracles.getHitpoints(); // -> 10
+heracles.rest();
+heracles.getHitpoints(); // -> 15
+
+
+	Don’t forget the purpose of task - practice reusability and inheritance.
+
